@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekspedisi Astronomi | Fadhil 9C</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <audio id="bg-soundtrack" loop>
+        <source src="assets/audio/soundtrack.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="login-page" class="page active">
+        <div class="glass-box">
+            <img src="assets/img/logo.png" alt="Logo" class="logo" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3094/3094132.png'">
+            <h1>Portal Astronomi</h1>
+            <p>Masukkan nama penjelajahmu!</p>
+            <input type="text" id="username" placeholder="Nama Penjelajah..." required>
+            <button onclick="mulaiEkspedisi()">Mulai Ekspedisi 🚀</button>
+        </div>
+    </div>
+
+    <div id="main-app" class="page">
+        <nav>
+            <div class="nav-brand">🌌 Astro<span>Fadhil</span></div>
+            <ul class="nav-links">
+                <li><a href="#" onclick="gantiHalaman('beranda')">Beranda</a></li>
+                <li><a href="#" onclick="gantiHalaman('astronomi')">Astronomi</a></li>
+                <li><a href="#" onclick="gantiHalaman('planet')">Planet</a></li>
+                <li><a href="#" onclick="gantiHalaman('kuis')">Kuis</a></li>
+                <li><a href="#" onclick="gantiHalaman('developer')">Developer</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="beranda" class="content-section active">
+                <div class="hero-glass">
+                    <h2>Selamat Datang, <span id="nama-user" class="highlight">Penjelajah</span>! 🧑‍🚀</h2>
+                    <h1>Jelajahi Keajaiban <br><span class="highlight">Alam Semesta</span></h1>
+                    <p>Siapkan dirimu untuk perjalanan melintasi bintang dan planet di tata surya kita. Pilih menu di atas untuk memulai petualanganmu!</p>
+                    <button class="btn-explore" onclick="gantiHalaman('astronomi')">Mulai Belajar</button>
+                </div>
+            </section>
+
+            <section id="astronomi" class="content-section">
+                <div class="info-glass">
+                    <h2>Apa Itu Astronomi? 🔭</h2>
+                    <p><strong>Astronomi</strong> adalah ilmu yang mempelajari benda-benda langit (seperti bintang, planet, komet, dan galaksi) serta fenomena alam yang terjadi di luar atmosfer Bumi.</p>
+                    <p>Sejak zaman kuno, manusia sudah mengamati langit untuk navigasi dan memahami waktu. Sekarang, astronomi membantu kita menjawab pertanyaan terbesar: <em>"Dari mana kita berasal, dan apakah kita sendirian di alam semesta?"</em></p>
+                </div>
+            </section>
+
+            <section id="planet" class="content-section">
+                <h2 class="section-title">Kenali Planet di Tata Surya 🪐</h2>
+                <div class="planet-grid">
+                    <div class="planet-card"><img src="assets/img/merkurius.jpg" alt="Merkurius"><h3>Merkurius</h3><p>Planet terkecil & terdekat dengan Matahari.</p></div>
+                    <div class="planet-card"><img src="assets/img/venus.jpg" alt="Venus"><h3>Venus</h3><p>Planet terpanas, ukurannya mirip Bumi.</p></div>
+                    <div class="planet-card"><img src="assets/img/bumi.jpg" alt="Bumi"><h3>Bumi</h3><p>Rumah kita, satu-satunya yang berkehidupan.</p></div>
+                    <div class="planet-card"><img src="assets/img/mars.jpg" alt="Mars"><h3>Mars</h3><p>Si Planet Merah yang berdebu.</p></div>
+                    <div class="planet-card"><img src="assets/img/jupiter.jpg" alt="Jupiter"><h3>Jupiter</h3><p>Raksasa gas terbesar di tata surya.</p></div>
+                    <div class="planet-card"><img src="assets/img/saturnus.jpg" alt="Saturnus"><h3>Saturnus</h3><p>Punya cincin es yang sangat indah.</p></div>
+                    <div class="planet-card"><img src="assets/img/uranus.jpg" alt="Uranus"><h3>Uranus</h3><p>Raksasa es yang berputar miring.</p></div>
+                    <div class="planet-card"><img src="assets/img/neptunus.jpg" alt="Neptunus"><h3>Neptunus</h3><p>Planet terjauh dengan badai kencang.</p></div>
+                </div>
+            </section>
+
+            <section id="kuis" class="content-section">
+                <div class="glass-box quiz-box">
+                    <h2>Kuis Astronomi 📝</h2>
+                    <div class="question">
+                        <p>1. Planet apakah yang terbesar di tata surya?</p>
+                        <input type="radio" name="q1" value="salah"> Bumi
+                        <input type="radio" name="q1" value="benar"> Jupiter
+                        <input type="radio" name="q1" value="salah"> Saturnus
+                    </div>
+                    <div class="question">
+                        <p>2. Planet manakah yang dijuluki "Planet Merah"?</p>
+                        <input type="radio" name="q2" value="benar"> Mars
+                        <input type="radio" name="q2" value="salah"> Venus
+                        <input type="radio" name="q2" value="salah"> Neptunus
+                    </div>
+                    <button class="btn-explore" onclick="cekJawaban()">Kirim Jawaban</button>
+                    <p id="hasil-kuis"></p>
+                </div>
+            </section>
+
+            <section id="developer" class="content-section">
+                <div class="glass-box dev-box">
+                    <h2>👨‍💻 Developer</h2>
+                    <h3>Muhammad Fadhil Putra Megasmara</h3>
+                    <p class="badge">Kelas 9C</p>
+                    <p>Website ini dibuat khusus untuk menjelajahi keindahan ilmu Astronomi.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
